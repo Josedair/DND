@@ -7,8 +7,6 @@
 
   <style>
     div {
-      width: 1000px;
-      padding: 50px;
       margin: auto;
       text-align: center;
       overflow: auto;
@@ -20,6 +18,24 @@
 
     .container>div {
       flex: 1;
+    }
+
+    .stack {
+      display: inline-block;
+    }
+
+    .btn-group button {
+      padding: 10px 24px;
+      /* Some padding */
+      cursor: pointer;
+      /* Pointer/hand icon */
+      width: 50%;
+      /* Set a width if needed */
+      display: block;
+      /* Make the buttons appear below each other */
+      margin: auto;
+      flex: 1;
+
     }
 
     input[type=button] {
@@ -52,18 +68,44 @@
   <div class="container">
     <script src="dogs.js"> </script>
     <div>
-
-      <input type="button" onclick="console.log('Name: ' , mage.name); console.log('atk: ',mage.atk)" value="Atticus">
+      <h1>Atticus</h1>
+      <div class="btn-group">
+        <button onclick="console.log(mageStats)"> Stats </button>
+        <button onclick="console.log('Attack: ' + magetoJson.atk)"> Attack </button>
+        <button onclick="console.log('Magic: ' + magetoJson.magi)"> Magic </button>
+        <button onclick="console.log('Defense: ' + magetoJson.def)"> Defense </button>
+        <button onclick="console.log('Speed: ' + magetoJson.spd)"> Speed </button>
+        <button onclick="console.log('Resistance: ' + magetoJson.res)"> Resistance </button>
+        <button onclick="console.log('Level: ' + magetoJson.level)"> Level </button>
+      </div>
     </div>
 
     <div>
-      <h1>Tank</h1>
-      <input>
+      <h1>Tango</h1>
+      <div class="btn-group">
+        <button onclick="console.log(tankStats)"> Stats </button>
+        <button onclick="console.log('Attack: ' + tanktoJson.atk)"> Attack </button>
+        <button onclick="console.log('Magic: ' + tanktoJson.magi)"> Magic </button>
+        <button onclick="console.log('Defense: ' + tanktoJson.def)"> Defense </button>
+        <button onclick="console.log('Speed: ' + tanktoJson.spd)"> Speed </button>
+        <button onclick="console.log('Resistance: ' + tanktoJson.res)"> Resistance </button>
+        <button onclick="console.log('Level: ' + tanktoJson.level)"> Level </button>
+      </div>
+
     </div>
 
-    <div>
-      <h1>Rogue</h1>
-      <input>
+    <div class="stack">
+      <h1>Midnight</h1>
+      <div class="btn-group">
+        <button onclick="console.log(rogueStats)"> Stats </button>
+        <button onclick="console.log('Attack: ' + roguetoJson.atk)"> Attack </button>
+        <button onclick="console.log('Magic: ' + roguetoJson.magi)"> Magic </button>
+        <button onclick="console.log('Defense: ' + roguetoJson.def)"> Defense </button>
+        <button onclick="console.log('Speed: ' + roguetoJson.spd)"> Speed </button>
+        <button onclick="console.log('Resistance: ' + roguetoJson.res)"> Resistance </button>
+        <button onclick="console.log('Level: ' + roguetoJson.level)"> Level </button>
+      </div>
+
     </div>
 
   </div>
