@@ -4,7 +4,7 @@
 
 
 <head>
-
+  <title>Dogs & Dungeons</title>
   <style>
     div {
       margin: auto;
@@ -68,16 +68,13 @@
   <div class="container">
     <script src="dogs.js"> </script>
     <div>
-      <h1>Atticus</h1>
+
       <div class="btn-group">
         <button style="background-color: rgb(134, 16, 245); border-radius: 5px; font-size: 25px;"
-          onclick="console.log(mageStats)">
-          Stats
+          onclick="console.log(mageStats); location.href = 'atticus.html'">
+          Atticus
         </button>
         <button onclick="console.log('Attack: ' + magetoJson.atk)"> Attack </button>
-        <label for="quantity">Attack:</label>
-        <input type="number" id="quantity" name="quantity" min="20" max="25">
-        <input type="submit" value="Submit">
         <button onclick="console.log('Magic: ' + magetoJson.magi)"> Magic </button>
         <button onclick="console.log('Defense: ' + magetoJson.def)"> Defense </button>
         <button onclick="console.log('Speed: ' + magetoJson.spd)"> Speed </button>
@@ -87,10 +84,10 @@
     </div>
 
     <div>
-      <h1>Tango</h1>
+
       <div class="btn-group">
         <button style="background-color: rgb(245, 16, 16); border-radius: 5px; font-size: 25px;"
-          onclick="console.log(tankStats)"> Stats </button>
+          onclick="console.log(tankStats);  location.href = 'tango.html'"> Tango </button>
         <button onclick="console.log('Attack: ' + tanktoJson.atk)"> Attack </button>
         <button onclick="console.log('Magic: ' + tanktoJson.magi)"> Magic </button>
         <button onclick="console.log('Defense: ' + tanktoJson.def)"> Defense </button>
@@ -102,10 +99,10 @@
     </div>
 
     <div class="stack">
-      <h1>Midnight</h1>
+
       <div class="btn-group">
         <button style="background-color: rgb(0, 221, 250); border-radius: 5px; font-size: 25px;"
-          onclick="console.log(rogueStats)"> Stats </button>
+          onclick="console.log(rogueStats);  location.href = 'midnight.html'"> Midnight </button>
         <button onclick="console.log('Attack: ' + roguetoJson.atk)"> Attack </button>
         <button onclick="console.log('Magic: ' + roguetoJson.magi)"> Magic </button>
         <button onclick="console.log('Defense: ' + roguetoJson.def)"> Defense </button>
