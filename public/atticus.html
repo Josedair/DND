@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Atticus</title>
+  <style>
+    div {
+      margin: auto;
+      text-align: center;
+      overflow: auto;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .container>div {
+      flex: 1;
+    }
+
+    .stack {
+      display: inline-block;
+    }
+
+    .btn-group button {
+      padding: 10px 24px;
+      /* Some padding */
+      cursor: pointer;
+      /* Pointer/hand icon */
+      width: 30%;
+      /* Set a width if needed */
+      display: block;
+      /* Make the buttons appear below each other */
+      margin: auto;
+      margin-bottom: 10px;
+      flex: 1;
+
+    }
+  </style>
+</head>
+<script src="dogs.js">
+</script>
+
+<body onload="mageStat()">
+
+
+  <h1 style="text-align:center; background-color:#8610f5; font-size: 75px;">Atticus</h1>
+  <div class="btn-group">
+    <h1>Attack: <input type="button" id="atk" value=no onclick="mageStat()"> </h1>
+
+    <h1>Magic: <input style="font-size: 30px;" type="button" id="magi" value="Magic"></h1>
+    <h1>Defense: <input type="button" id="def" value="Defense"> </h1>
+
+    <h1>Speed: <input type="button" id="spd" value="Speed"></h1>
+
+    <h1>Resistance: <input type="button" id="res" value="Resistance"> </h1>
+
+    <h1> <input type="button" id="lvl" value="Level"> </h1>
+
+  </div>
+
+  <div class="btn-group">
+    <button style="background-color:#8610f5; font-size: 25px;" onclick="randomMage()"> Calculate Stats</button>
+  </div>
+</body>
+
+
+</html>
