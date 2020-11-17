@@ -9,6 +9,36 @@ var mage = {
   special: "Elemental Fury"
 }
 
+function randomMage(){
+
+  var atkN = mage.atk;
+  var magiN = mage.magi;
+  var defN = mage.def;
+  var spdN = mage.spd;
+  var resN = mage.res;
+
+  atkN = atkN + Math.floor((Math.random()* 5)+1);
+  magiN = magiN + Math.floor((Math.random()* 5)+1);
+  defN = defN + Math.floor((Math.random()* 5)+1);
+  spdN = spdN + Math.floor((Math.random()* 5)+1);
+  resN = resN + Math.floor((Math.random()* 5)+1);
+
+  document.getElementById("atk").value = atkN;
+  document.getElementById("magi").value = magiN;
+  document.getElementById("def").value = defN;
+  document.getElementById("spd").value = spdN;
+  document.getElementById("res").value = resN;
+}
+
+function mageStat() {
+  document.getElementById("atk").value = mage.atk;
+  document.getElementById("magi").value = mage.magi;
+  document.getElementById("def").value = mage.def;
+  document.getElementById("spd").value = mage.spd;
+  document.getElementById("res").value = mage.res;
+}
+
+
 var tank = {
   name: "Tango",
   atk: 60,
