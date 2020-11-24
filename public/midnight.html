@@ -4,12 +4,86 @@
 <head>
   <title>Midnight</title>
 
-<body>
+  <style>
+    div {
+      margin: auto;
+      text-align: center;
+      overflow: auto;
+    }
 
+    .container {
+      display: flex;
+    }
 
+    .container>div {
+      flex: 1;
+    }
 
-</body>
+    .stack {
+      display: inline-block;
+    }
+
+    .btn-group button {
+      padding: 10px 24px;
+      /* Some padding */
+      cursor: pointer;
+      /* Pointer/hand icon */
+      width: 20%;
+      /* Set a width if needed */
+      display: block;
+      /* Make the buttons appear below each other */
+      margin: auto;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+
+    .stat {
+      cursor: help;
+    }
+  </style>
 
 </head>
+
+<script src="dogs.js"> </script>
+
+<script type="text/javascript">
+  function btnDisable() {
+    document.getElementById("aStart").disabled = false;
+  }
+</script>
+
+
+<body onload="dogStats(rogue)">
+
+
+  <h1 style="text-align:center; background-color:rgb(0, 221, 250); font-size: 75px;">Midnight</h1>
+  <div class="btn-group">
+    <h1>Attack: <input class="stat" type="button" id="atk" value="Attack" title="Power of physical attacks"> </h1>
+
+    <h1>Magic: <input class="stat" style="font-size: 30px;" type="button" id="magi" value="Magic"
+        title="Power of Magical attacks"></h1>
+    <h1>Defense: <input class="stat" type="button" id="def" value="Defense" title="Defense against physical attacks">
+    </h1>
+
+    <h1>Speed: <input class="stat" type="button" id="spd" value="Speed" title="How fast are they?"></h1>
+
+    <h1>Resistance: <input class="stat" type="button" id="res" value="Resistance"
+        title="Defense against magical attacks"> </h1>
+
+    <h1> Level: <input class="stat" type="button" id="lvl" value="1"> </h1>
+
+  </div>
+
+  <div class="btn-group">
+    <button title="Boosts each stat by a random number (+5 max)"
+      style="background-color:rgb(0, 221, 250); font-size: 25px;"
+      onclick="statBoost(rogue); btnDisable(); this.disabled=true;">
+      Random Stat Boost
+    </button>
+    <button disabled="true" id="aStart" style="background-color:rgb(0, 221, 250); font-size: 25px;" onclick="">
+      Start Adventure
+    </button>
+  </div>
+</body>
 
 </html>

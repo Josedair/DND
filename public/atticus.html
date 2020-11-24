@@ -27,40 +27,58 @@
       /* Some padding */
       cursor: pointer;
       /* Pointer/hand icon */
-      width: 30%;
+      width: 20%;
       /* Set a width if needed */
       display: block;
       /* Make the buttons appear below each other */
       margin: auto;
       margin-bottom: 10px;
       flex: 1;
+    }
 
+    .stat {
+      cursor: help;
     }
   </style>
 </head>
-<script src="dogs.js">
+<script src="dogs.js"> </script>
+
+<script type="text/javascript">
+  function btnDisable() {
+    document.getElementById("aStart").disabled = false;
+  }
 </script>
 
-<body onload="mageStat()">
+
+<body onload="dogStats(mage)">
 
 
   <h1 style="text-align:center; background-color:#8610f5; font-size: 75px;">Atticus</h1>
   <div class="btn-group">
-    <h1>Attack: <input type="button" id="atk" value=no onclick="mageStat()"> </h1>
+    <h1>Attack: <input class="stat" type="button" id="atk" value="Attack" title="Power of physical attacks"> </h1>
 
-    <h1>Magic: <input style="font-size: 30px;" type="button" id="magi" value="Magic"></h1>
-    <h1>Defense: <input type="button" id="def" value="Defense"> </h1>
+    <h1>Magic: <input class="stat" style="font-size: 30px;" type="button" id="magi" value="Magic"
+        title="Power of Magical attacks"></h1>
+    <h1>Defense: <input class="stat" type="button" id="def" value="Defense" title="Defense against physical attacks">
+    </h1>
 
-    <h1>Speed: <input type="button" id="spd" value="Speed"></h1>
+    <h1>Speed: <input class="stat" type="button" id="spd" value="Speed" title="How fast are they?"></h1>
 
-    <h1>Resistance: <input type="button" id="res" value="Resistance"> </h1>
+    <h1>Resistance: <input class="stat" type="button" id="res" value="Resistance"
+        title="Defense against magical attacks"> </h1>
 
-    <h1> <input type="button" id="lvl" value="Level"> </h1>
+    <h1> Level: <input class="stat" type="button" id="lvl" value="1"> </h1>
 
   </div>
 
   <div class="btn-group">
-    <button style="background-color:#8610f5; font-size: 25px;" onclick="randomMage()"> Calculate Stats</button>
+    <button title="Boosts each stat by a random number (+5 max)" style="background-color:#8610f5; font-size: 25px;"
+      onclick="statBoost(mage); btnDisable(); this.disabled=true;">
+      Random Stat Boost
+    </button>
+    <button disabled="true" id="aStart" style="background-color:#8610f5; font-size: 25px;" onclick="">
+      Start Adventure
+    </button>
   </div>
 </body>
 

@@ -1,5 +1,6 @@
 var mage = {
   name: "Atticus",
+  hp: 100,
   atk: 20,
   magi: 100,
   def: 30,
@@ -9,13 +10,41 @@ var mage = {
   special: "Elemental Fury"
 }
 
-function randomMage(){
 
-  var atkN = mage.atk;
-  var magiN = mage.magi;
-  var defN = mage.def;
-  var spdN = mage.spd;
-  var resN = mage.res;
+
+
+var tank = {
+  name: "Tango",
+  hp: 100,
+  atk: 60,
+  magi: 5,
+  def: 100,
+  spd: 25,
+  res: 20,
+  level: 1,
+  special: "Parry"
+}
+
+var rogue = {
+  name: "Midnight",
+  hp: 100,
+  atk: 100,
+  magi: 20,
+  def: 20,
+  spd: 80,
+  res: 60,
+  level: 1,
+  special: "sneak attack"
+
+}
+
+function statBoost(dog){
+  var dog;
+  var atkN = dog.atk;
+  var magiN = dog.magi;
+  var defN = dog.def;
+  var spdN = dog.spd;
+  var resN = dog.res;
 
   atkN = atkN + Math.floor((Math.random()* 5)+1);
   magiN = magiN + Math.floor((Math.random()* 5)+1);
@@ -30,36 +59,13 @@ function randomMage(){
   document.getElementById("res").value = resN;
 }
 
-function mageStat() {
-  document.getElementById("atk").value = mage.atk;
-  document.getElementById("magi").value = mage.magi;
-  document.getElementById("def").value = mage.def;
-  document.getElementById("spd").value = mage.spd;
-  document.getElementById("res").value = mage.res;
-}
-
-
-var tank = {
-  name: "Tango",
-  atk: 60,
-  magi: 0,
-  def: 100,
-  spd: 25,
-  res: 20,
-  level: 1,
-  special: "Parry"
-}
-
-var rogue = {
-  name: "Midnight",
-  atk: 100,
-  magi: 20,
-  def: 20,
-  spd: 80,
-  res: 60,
-  level: 1,
-  special: "sneak attack"
-
+function dogStats(dog) {
+  var dog;
+  document.getElementById("atk").value = dog.atk;
+  document.getElementById("magi").value = dog.magi;
+  document.getElementById("def").value = dog.def;
+  document.getElementById("spd").value = dog.spd;
+  document.getElementById("res").value = dog.res;
 }
 
 var mageStats = JSON.stringify(mage);
