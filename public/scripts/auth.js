@@ -1,3 +1,9 @@
+//get data
+
+db.collection('userCharStats').get().then(snapshot => {
+  console.log(snapshot.docs);
+});
+
 //auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -9,6 +15,8 @@ auth.onAuthStateChanged(user => {
     setupUI();
   }
 });
+
+//submit to database
 
 
 //Signup

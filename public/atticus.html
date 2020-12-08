@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
   <title>Atticus</title>
   <style>
@@ -49,12 +50,29 @@
   }
 </script>
 
+<script type="text/javascript">
+  function statSave() {
+
+    const saveStats = document.querySelector('#charStats');
+    db.collection('userCharStats').add({
+      Name: mage.name,
+      Attack: document.getElementById("atk").value,
+      Magic: document.getElementById("magi").value,
+      Defense: document.getElementById("def").value,
+      Speed: document.getElementById("spd").value,
+      Resistance: document.getElementById("res").value,
+    });
+
+  }
+</script>
+
+
 
 <body onload="dogStats(mage)">
 
 
   <h1 style="text-align:center; background-color:#8610f5; font-size: 75px;">Atticus</h1>
-  <div class="btn-group">
+  <div class="btn-group" id="charStats">
     <h1>Attack: <input class="stat" type="button" id="atk" value="Attack" title="Power of physical attacks"> </h1>
 
     <h1>Magic: <input class="stat" style="font-size: 30px;" type="button" id="magi" value="Magic"
@@ -76,11 +94,40 @@
       onclick="statBoost(mage); btnDisable(); this.disabled=true;">
       Random Stat Boost
     </button>
-    <button disabled="true" id="aStart" style="background-color:#8610f5; font-size: 25px;" onclick="">
-      Start Adventure
-    </button>
+    <input type="button" disabled="true" id="aStart" value="Start Adventure"
+      style="background-color:#8610f5; font-size: 25px;" onclick="statSave()">
+
   </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAepN_L1ory2bZ6DOiBbRdA6XlZQGygcoc",
+      authDomain: "jgdcse405.firebaseapp.com",
+      databaseURL: "https://jgdcse405.firebaseio.com",
+      projectId: "jgdcse405",
+      storageBucket: "jgdcse405.appspot.com",
+      messagingSenderId: "232738877668",
+      appId: "1:232738877668:web:95d25ae752979420cefcf1"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    //firestore & auth refrences
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    //firestore update
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
+
 
 
 </html>
