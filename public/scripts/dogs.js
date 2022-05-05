@@ -1,13 +1,13 @@
 var mage = {
-  name: "Atticus",
-  hp: 100,
-  atk: 20,
-  magi: 100,
-  def: 25,
-  spd: 40,
-  res: 90,
-  level: 1,
-  special: "Elemental Fury"
+  name: "Atticus", //name of dog
+  hp: 100, //health points
+  atk: 20, // physical attack stat
+  magi: 100, //magical attack stat
+  def: 25, //physical defense stat
+  spd: 40, //speed stat
+  res: 90, //magical defense stat
+  level: 1, // dog level
+  special: "Elemental Fury" //dog's special attack
 }
 
 
@@ -38,6 +38,7 @@ var rogue = {
 
 }
 
+// this function gives the character you choose a random stat boost at the beginning of the game
 function statBoost(dog){
   var dog;
   var atkN = dog.atk;
@@ -59,6 +60,7 @@ function statBoost(dog){
   document.getElementById("res").value = resN;
 }
 
+//displays the stats of the dog
 function dogStats(dog) {
   var dog;
   document.getElementById("atk").value = dog.atk;
