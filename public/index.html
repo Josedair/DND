@@ -18,28 +18,112 @@
 
     .container {
       display: flex;
+      justify-content: center;
+
+    }
+
+    .colum {
+      display: flex;
+      justify-content: center;
+      width: 26vw;
     }
 
     .container>div {
       flex: 1;
     }
 
-    .stack {
-      display: inline-block;
+    .btn-group {
+      height: 47vw;
+      margin: auto;
+      margin-right: -80px;
+      justify-content: center;
+      /* display: flex; */
+      width: 23vw;
+      padding: 1vw
     }
 
     .btn-group button {
-      padding: 10px 24px;
+      padding: 1vw;
       /* Some padding */
       cursor: pointer;
       /* Pointer/hand icon */
-      width: 50%;
+      width: 12vw;
       /* Set a width if needed */
       display: block;
       /* Make the buttons appear below each other */
-      margin: auto;
-      flex: 1;
+      /* margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px; */
 
+      /* word-wrap: break-word; */
+      /* flex: 1; */
+      background-color: #e0e0e0;
+
+    }
+
+    .btn-group .stat button {
+      cursor: default;
+      /* margin: 1px; */
+      margin-left: -20px;
+      font-size: 1.5vw;
+
+    }
+
+    .stat {
+      padding: 1vw;
+      justify-content: center;
+      width: 50vw;
+      height: 46vw;
+      margin: 0 auto;
+    }
+
+    .btn-group .stat :hover {
+      /* font-size: x-large; */
+      font-weight: bold;
+      background-color: #ccc7c7;
+      transform: rotate(10deg);
+      transform: rotate(-10deg);
+    }
+
+    /*===================*/
+    /* PULSE GROW on hover
+    /*===================*/
+
+    @-webkit-keyframes pulse-grow {
+      to {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes pulse-grow {
+      to {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+
+    .pulse-grow {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+
+    .pulse-grow:hover,
+    .pulse-grow:focus,
+    .pulse-grow:active {
+      -webkit-animation-name: pulse-grow;
+      animation-name: pulse-grow;
+      -webkit-animation-duration: 0.9s;
+      animation-duration: 0.9s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
     }
   </style>
 
@@ -115,51 +199,58 @@
   <h1 style="text-align:center"> Choose Your Character! </h1>
   <div class="container">
 
-    <div>
+    <div class="colum">
 
       <div class="btn-group">
-        <button style="background-color: rgb(134, 16, 245); border-radius: 5px; font-size: 25px;"
+        <button class="pulse-grow" style="background-color: rgb(134, 16, 245); border-radius: 5px; font-size: 2vw;"
           onclick="console.log(mageStats); location.href = 'atticus.html'">
           Atticus
         </button>
-        <button onclick="console.log('Attack: ' + magetoJson.atk)"> Attack: 20 </button>
-        <button onclick="console.log('Magic: ' + magetoJson.magi)"> Magic: 100 </button>
-        <button onclick="console.log('Defense: ' + magetoJson.def)"> Defense: 25 </button>
-        <button onclick="console.log('Speed: ' + magetoJson.spd)"> Speed: 40 </button>
-        <button onclick="console.log('Resistance: ' + magetoJson.res)"> Resistance: 90 </button>
-        <button onclick="console.log('Level: ' + magetoJson.level)"> Level: 1 </button>
+        <div class="stat">
+          <button onclick="console.log('Attack: ' + magetoJson.atk)"> Attack: 20 </button>
+          <button onclick="console.log('Magic: ' + magetoJson.magi)"> Magic: 100 </button>
+          <button onclick="console.log('Defense: ' + magetoJson.def)"> Defense: 25 </button>
+          <button onclick="console.log('Speed: ' + magetoJson.spd)"> Speed: 40 </button>
+          <button onclick="console.log('Resistance: ' + magetoJson.res)"> Resistance: 90 </button>
+          <button onclick="console.log('Level: ' + magetoJson.level)"> Level: 1 </button>
+        </div>
       </div>
     </div>
 
-    <div>
+    <div class="colum">
 
       <div class="btn-group">
-        <button style="background-color: rgb(245, 16, 16); border-radius: 5px; font-size: 25px;"
+        <button class="pulse-grow" style="background-color: rgb(245, 16, 16); border-radius: 5px; font-size: 2vw"
           onclick="console.log(tankStats);  location.href = 'tango.html'"> Tango </button>
-        <button onclick="console.log('Attack: ' + tanktoJson.atk)"> Attack: 60 </button>
-        <button onclick="console.log('Magic: ' + tanktoJson.magi)"> Magic: 5 </button>
-        <button onclick="console.log('Defense: ' + tanktoJson.def)"> Defense: 100 </button>
-        <button onclick="console.log('Speed: ' + tanktoJson.spd)"> Speed: 25 </button>
-        <button onclick="console.log('Resistance: ' + tanktoJson.res)"> Resistance: 20 </button>
-        <button onclick="console.log('Level: ' + tanktoJson.level)"> Level: 1 </button>
+        <div class="stat">
+          <button onclick="console.log('Attack: ' + tanktoJson.atk)"> Attack: 60 </button>
+          <button onclick="console.log('Magic: ' + tanktoJson.magi)"> Magic: 5 </button>
+          <button onclick="console.log('Defense: ' + tanktoJson.def)"> Defense: 100 </button>
+          <button onclick="console.log('Speed: ' + tanktoJson.spd)"> Speed: 25 </button>
+          <button onclick="console.log('Resistance: ' + tanktoJson.res)"> Resistance: 20 </button>
+          <button onclick="console.log('Level: ' + tanktoJson.level)"> Level: 1 </button>
+        </div>
       </div>
 
     </div>
 
-    <div class="stack">
 
+    <div class="colum">
       <div class="btn-group">
-        <button style="background-color: rgb(0, 221, 250); border-radius: 5px; font-size: 25px;"
+        <button class="pulse-grow" style="background-color: rgb(0, 221, 250); border-radius: 5px; font-size: 2vw;"
           onclick="console.log(rogueStats);  location.href = 'midnight.html'"> Midnight </button>
-        <button onclick="console.log('Attack: ' + roguetoJson.atk)"> Attack: 100 </button>
-        <button onclick="console.log('Magic: ' + roguetoJson.magi)"> Magic: 25 </button>
-        <button onclick="console.log('Defense: ' + roguetoJson.def)"> Defense: 20 </button>
-        <button onclick="console.log('Speed: ' + roguetoJson.spd)"> Speed: 80 </button>
-        <button onclick="console.log('Resistance: ' + roguetoJson.res)"> Resistance: 60 </button>
-        <button onclick="console.log('Level: ' + roguetoJson.level)"> Level: 1 </button>
+        <div class="stat">
+          <button onclick="console.log('Attack: ' + roguetoJson.atk)"> Attack: 100 </button>
+          <button onclick="console.log('Magic: ' + roguetoJson.magi)"> Magic: 25 </button>
+          <button onclick="console.log('Defense: ' + roguetoJson.def)"> Defense: 20 </button>
+          <button onclick="console.log('Speed: ' + roguetoJson.spd)"> Speed: 80 </button>
+          <button onclick="console.log('Resistance: ' + roguetoJson.res)"> Resistance: 60 </button>
+          <button onclick="console.log('Level: ' + roguetoJson.level)"> Level: 1 </button>
+        </div>
       </div>
-
     </div>
+
+
 
   </div>
 
